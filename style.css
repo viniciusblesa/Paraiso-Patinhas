@@ -1,0 +1,170 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: rgb(246, 246, 246);
+}
+
+/* header */
+header{
+    background-color: white;
+    margin-bottom: 30px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between; 
+}
+
+/* div logo */
+header .logo{
+    display: flex;
+}
+
+header .logo img{
+    width: 150px;
+    margin-right: 20px;
+}
+
+header .logo h1 a{
+    margin-top: 30px;
+    font-size: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+}
+
+/* nav */
+header nav ul li{
+    display: inline-block;
+    text-decoration: none;
+    margin: 10px 20px 0px 0px;
+}
+header nav ul li a{
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    border-radius: 20px;
+}
+header nav ul li a:hover{
+    padding: -20px;
+    border-radius: 15px;
+    background-color: lightgreen;
+    color: white;
+}
+header nav ul li a:active{
+    padding: 20px;
+    padding: -20px;
+    border-radius: 15px;
+    background-color: black;
+    color: white;
+}
+
+/* div principal */
+.principal{
+    background-color: white;
+    padding: 15px 15px 100px 15px;
+}
+
+/* div conteudo */
+.principal .conteudo h1{
+    text-align: center;
+}
+
+.principal .conteudo h1 span{
+    color: lightgreen;
+}
+
+.principal .conteudo p{
+    margin: 20px 260px;
+    font-size: 25px;
+    text-align: justify;
+}
+
+/* div caixa */
+.principal .caixa{
+    background: linear-gradient(to right, white, white, lightgreen);
+    margin: 50px 100px 0px 100px;
+    padding: 15px;
+    border-radius: 20px;
+    border: lightgreen solid 5px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* div caixa_texto */
+.principal .caixa .caixa_display .caixa_texto{
+    font-size: 25px;
+    text-align: justify;
+    margin-right: 100px;
+}
+
+/* div caixa_button */
+.principal .caixa .caixa_display .caixa_button{
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    width: 100px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.principal .caixa .caixa_display .caixa_button:hover{
+    background-color: lightgreen;
+    color: white;
+}
+
+.principal .caixa .caixa_display .caixa_button:active{
+    background-color: black;
+    color: white;
+}
+
+/* img */
+.principal .caixa img{
+    margin: auto;
+    height: 300px;
+    border-radius: 20px;
+}
+
+/* responsividade */
+@media (max-width: 880px) {
+    header{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+  }
+
+@media (max-width: 1273px) {
+    .principal .caixa .caixa_display .caixa_texto{
+        margin: 0;
+    }
+
+    .principal .caixa .caixa_display .caixa_button{
+        margin-bottom: 50px;
+    }
+
+    .principal .caixa{
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 1048px) {
+    .principal .conteudo p{
+        margin: 20px 100px;
+    }
+}
+
+@media (max-width: 725px) {
+    .principal .conteudo p{
+        margin: 20px 50px;
+    }
+}
+
+/* footer */
+footer{
+    background-color: white;
+    margin-top: 30px;
+    padding: 15px;
+}
