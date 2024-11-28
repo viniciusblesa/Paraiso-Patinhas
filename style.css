@@ -121,10 +121,16 @@ header nav ul li a:active{
     color: white;
 }
 
+.principal .caixa .caixa_display .caixa_button a{
+    text-wrap: wrap;
+    color: white;
+}
+
 /* img */
 .principal .caixa img{
     margin: auto;
-    height: 300px;
+    max-width: 100%;
+    height: auto;
     border-radius: 20px;
 }
 
