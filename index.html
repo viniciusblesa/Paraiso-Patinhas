@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="img/Logo-removebg-preview__1_-removebg-preview.png">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app.py">
     <title>PARAÍSO PATINHAS</title>
   </head>
   <body>
@@ -61,5 +62,47 @@
     <footer>
         <p>&copy; PARAÍSO PATINHAS</p>
     </footer>
+
+    <!-- Chatbot Flutuante -->
+    <div id="chat-icon" onclick="toggleChat()">🐾</div>
+
+    <div id="chat-box">
+      <div id="chat-header">Atendimento PetShop</div>
+      <div id="chat-output"></div>
+      <input type="text" id="chat-input" placeholder="Digite sua pergunta..." onkeypress="handleKeyPress(event)">
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+    <script>
+      function toggleChat() {
+        const chat = document.getElementById("chat-box");
+        chat.style.display = (chat.style.display === "flex") ? "none" : "flex";
+        chat.style.flexDirection = "column";
+      }
+    
+      function sendMessage() {
+        const input = document.getElementById("chat-input");
+        const message = input.value.trim();
+        if (!message) return;
+    
+        document.getElementById("chat-output").innerHTML += `<p><strong>Você:</strong> ${message}</p>`;
+        input.value = "";
+    
+        fetch("http://localhost:5000/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        })
+        .then(res => res.json())
+        .then(data => {
+          document.getElementById("chat-output").innerHTML += `<p><strong>Bot:</strong> ${data.response}</p>`;
+        });
+      }
+    
+      function handleKeyPress(e) {
+        if (e.key === "Enter") {
+          sendMessage();
+        }
+      }
+    </script>    
   </body>
 </html>
